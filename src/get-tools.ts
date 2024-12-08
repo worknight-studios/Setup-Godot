@@ -18,6 +18,7 @@ export async function getGodot(version: string, mono: boolean): Promise<string> 
   const godotFileName = `Godot_v${version}-stable_${mono ? "mono_" : ""}linux_headless${mono ? "_" : "."}64`;
   
   const godotDownloadPath = await tc.downloadTool(`https://github.com/godotengine/godot-builds/releases/download/${version}-stable${mono ? "mono/" : "/"}${godotFileName}.zip`);
+  core.info(`https://github.com/godotengine/godot-builds/releases/download/${version}-stable${mono ? "mono/" : "/"}${godotFileName}.zip`);
   core.info(`${godotLabel} donwload sucessfull!`);
 
   core.info(`Attempting to extract ${godotLabel}`);
